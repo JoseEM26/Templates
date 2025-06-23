@@ -16,6 +16,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
       body {
         margin: 0;
@@ -74,14 +77,12 @@
         background-color: #e2e6ea;
       }
 
-      /* OCULTAR MENÚ SI CHECK NO ESTÁ ACTIVO */
       #btn-menu:not(:checked) ~ .menu-lateral {
         transform: translateX(-100%);
       }
 
-      /* CONTENIDO PRINCIPAL */
       .content {
-        margin-top: 60px; /* espacio para navbar */
+        margin-top: 60px;
         margin-left: 270px;
         padding: 20px;
       }
@@ -97,6 +98,7 @@
       }
     </style>
   </head>
+
   <body>
     <!-- Toggle oculto -->
     <input type="checkbox" id="btn-menu" />
@@ -116,7 +118,7 @@
         <a href="productos.html"
           ><i class="fa-solid fa-boxes-stacked"></i> Productos</a
         >
-        <a href="logout.html"
+        <a href="#" id="cerrarSesionLink"
           ><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a
         >
       </nav>
@@ -126,5 +128,28 @@
     <div class="content">
       <p>Aquí va el contenido principal de la página.</p>
     </div>
+
+    <!-- Funcionalidad de Logout -->
+    <script>
+      document
+        .getElementById("cerrarSesionLink")
+        .addEventListener("click", function (e) {
+          e.preventDefault(); // Evita la navegación inmediata
+          Swal.fire({
+            title: "¿Deseas cerrar sesión?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, cerrar",
+            cancelButtonText: "No",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirige al controlador de logout
+              window.location.href = "/cerrar-sesion";
+            }
+          });
+        });
+    </script>
   </body>
 </html>

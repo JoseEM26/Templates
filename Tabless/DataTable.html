@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo de DataTable</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css"
+    />
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4">Lista de Empleados</h2>
+      <table
+        id="tabla-empleados"
+        class="table table-striped"
+        style="width: 100%"
+      >
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Oficina</th>
+            <th>Edad</th>
+            <th>Fecha de Ingreso</th>
+            <th>Salario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Desarrollador</td>
+            <td>Madrid</td>
+            <td>29</td>
+            <td>2020-01-15</td>
+            <td>$3,500</td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>Diseñadora UX</td>
+            <td>Barcelona</td>
+            <td>34</td>
+            <td>2019-06-01</td>
+            <td>$4,200</td>
+          </tr>
+          <tr>
+            <td>Luis Gómez</td>
+            <td>Jefe de Proyecto</td>
+            <td>Valencia</td>
+            <td>41</td>
+            <td>2018-09-12</td>
+            <td>$5,800</td>
+          </tr>
+          <tr>
+            <td>Carmen Ruiz</td>
+            <td>Analista de Datos</td>
+            <td>Madrid</td>
+            <td>27</td>
+            <td>2022-03-28</td>
+            <td>$3,200</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Oficina</th>
+            <th>Edad</th>
+            <th>Fecha de Ingreso</th>
+            <th>Salario</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Inicializar DataTable -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new DataTable("#tabla-empleados", {
+          language: {
+            url: "https://cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json",
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
