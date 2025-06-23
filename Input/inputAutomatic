@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocompletado</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      input {
+        padding: 10px;
+        width: 300px;
+        font-size: 16px;
+      }
+
+      .sugerencias {
+        border: 1px solid #ccc;
+        max-width: 300px;
+        background: #fff;
+        position: absolute;
+        z-index: 10;
+      }
+
+      .sugerencia {
+        padding: 8px;
+        cursor: pointer;
+      }
+
+      .sugerencia:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Buscar distrito:</h2>
+    <input
+      type="text"
+      id="inputTexto"
+      placeholder="Ej. san"
+      autocomplete="off"
+    />
+    <div class="sugerencias" id="sugerencias"></div>
+
+    <script>
+      const palabras = [
+        "San Isidro",
+        "San Borja",
+        "San Miguel",
+        "San Martín de Porres",
+        "Santa Anita",
+        "Santiago de Surco",
+        "Surquillo",
+        "San Juan de Lurigancho",
+        "San Juan de Miraflores",
+        "Santa Rosa",
+        "Miraflores",
+        "Magdalena",
+        "Ate",
+        "Breña",
+        "La Molina",
+        "La Victoria",
+        "Lince",
+        "Lima",
+        "Los Olivos",
+      ];
+
+      const input = document.getElementById("inputTexto");
+      const sugerenciasDiv = document.getElementById("sugerencias");
+
+      input.addEventListener("input", () => {
+        const texto = input.value.toLowerCase();
+        sugerenciasDiv.innerHTML = ""; // Limpiar sugerencias anteriores
+
+        if (texto.length === 0) return;
+
+        const coincidencias = palabras.filter((p) =>
+          p.toLowerCase().startsWith(texto)
+        );
+
+        coincidencias.forEach((coincidencia) => {
+          const item = document.createElement("div");
+          item.classList.add("sugerencia");
+          item.textContent = coincidencia;
+          item.addEventListener("click", () => {
+            input.value = coincidencia;
+            sugerenciasDiv.innerHTML = ""; // Limpiar después de seleccionar
+          });
+          sugerenciasDiv.appendChild(item);
+        });
+      });
+
+      // Ocultar sugerencias al hacer clic fuera del input
+      document.addEventListener("click", (e) => {
+        if (!sugerenciasDiv.contains(e.target) && e.target !== input) {
+          sugerenciasDiv.innerHTML = "";
+        }
+      });
+    </script>
+  </body>
+</html>

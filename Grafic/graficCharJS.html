@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gráficos con Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f7f7f7;
+        padding: 40px;
+      }
+      canvas {
+        max-width: 600px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gráficos desde Arrays</h1>
+
+    <canvas id="barChart"></canvas>
+    <canvas id="pieChart"></canvas>
+
+    <script>
+      // Datos de ejemplo desde arrays
+      const labels = ["Enero", "Febrero", "Marzo", "Abril", "Mayo"];
+      const datosVentas = [120, 150, 180, 100, 200];
+
+      // Gráfico de barras
+      new Chart(document.getElementById("barChart"), {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Ventas por mes",
+              data: datosVentas,
+              backgroundColor: "rgba(54, 162, 235, 0.6)",
+              borderColor: "rgba(54, 162, 235, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true },
+          },
+        },
+      });
+
+      // Gráfico de torta (pastel)
+      new Chart(document.getElementById("pieChart"), {
+        type: "pie",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Ventas por mes",
+              data: datosVentas,
+              backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56",
+                "#4BC0C0",
+                "#9966FF",
+              ],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+        },
+      });
+    </script>
+  </body>
+</html>
