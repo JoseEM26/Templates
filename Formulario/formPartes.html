@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulario por pasos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .form-step {
+        display: none;
+      }
+      .form-step.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="card shadow p-4">
+        <form id="multiStepForm">
+          <!-- Paso 1 -->
+          <div class="form-step active">
+            <h3><b>Datos de los trabajadores</b></h3>
+            <hr />
+            <div class="mb-3">
+              <label for="supervisorNombre" class="form-label"
+                >Nombre del Supervisor:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="supervisorNombre"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="consultorNombre" class="form-label"
+                >Nombre del Consultor:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="consultorNombre"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="trabajadorEmail" class="form-label"
+                >Correo Electrónico:</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="trabajadorEmail"
+                required
+              />
+            </div>
+            <button type="button" class="btn btn-primary next-step">
+              Siguiente
+            </button>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="form-step">
+            <h3><b>Datos del cliente</b></h3>
+            <hr />
+            <div class="mb-3">
+              <label for="razonSocial" class="form-label">Razón Social:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="razonSocial"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="ruc" class="form-label">RUC:</label>
+              <input type="text" class="form-control" id="ruc" required />
+            </div>
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="button" class="btn btn-primary next-step">
+              Siguiente
+            </button>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="form-step">
+            <h3><b>Representante legal</b></h3>
+            <hr />
+            <div class="mb-3">
+              <label for="repNombre" class="form-label">Nombre:</label>
+              <input type="text" class="form-control" id="repNombre" required />
+            </div>
+            <div class="mb-3">
+              <label for="repApellido" class="form-label">Apellido:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="repApellido"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="repDNI" class="form-label">DNI:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="repDNI"
+                maxlength="8"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="repCorreo" class="form-label">Correo:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="repCorreo"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="repTelefono" class="form-label">Teléfono:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="repTelefono"
+                required
+              />
+            </div>
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="button" class="btn btn-primary next-step">
+              Siguiente
+            </button>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="form-step">
+            <h3><b>Contacto autorizado</b></h3>
+            <hr />
+            <div class="mb-3">
+              <label for="contactoNombre" class="form-label">Nombre:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contactoNombre"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="contactoApellido" class="form-label">Apellido:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contactoApellido"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="contactoDNI" class="form-label">DNI:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contactoDNI"
+                maxlength="8"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="contactoCorreo" class="form-label">Correo:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="contactoCorreo"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="contactoTelefono" class="form-label">Teléfono:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contactoTelefono"
+                required
+              />
+            </div>
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="button" class="btn btn-primary next-step">
+              Siguiente
+            </button>
+          </div>
+
+          <!-- Paso 5 -->
+          <div class="form-step">
+            <h3><b>Servicio contratado</b></h3>
+            <hr />
+            <div class="mb-3">
+              <label for="planServicio" class="form-label">Plan:</label>
+              <select class="form-control" id="planServicio" required>
+                <option value="">--SELECCIONA--</option>
+                <option value="fibra">Internet Fibra Óptima</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="promocionServicio" class="form-label"
+                >Promoción:</label
+              >
+              <select class="form-control" id="promocionServicio" required>
+                <option value="">--SELECCIONA--</option>
+                <option value="fibra">Internet Fibra Óptima</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="direccionInstalacion" class="form-label"
+                >Dirección de Instalación:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="direccionInstalacion"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="rangoHorario" class="form-label"
+                >Rango horario de instalación:</label
+              >
+              <select class="form-control" id="rangoHorario" required>
+                <option value="">--SELECCIONA--</option>
+                <option value="mañana">09:00 a 13:00 hr</option>
+                <option value="tarde">13:00 a 18:00 hr</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="fechaInstalacion" class="form-label"
+                >Fecha de Instalación:</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="fechaInstalacion"
+                required
+              />
+            </div>
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="submit" class="btn btn-success">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const steps = document.querySelectorAll(".form-step");
+      let currentStep = 0;
+
+      document.querySelectorAll(".next-step").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (validarPaso(currentStep)) {
+            steps[currentStep].classList.remove("active");
+            currentStep++;
+            steps[currentStep].classList.add("active");
+          }
+        });
+      });
+
+      document.querySelectorAll(".prev-step").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          steps[currentStep].classList.remove("active");
+          currentStep--;
+          steps[currentStep].classList.add("active");
+        });
+      });
+
+      document
+        .getElementById("multiStepForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Formulario enviado correctamente 🎉");
+          this.reset();
+          steps[currentStep].classList.remove("active");
+          currentStep = 0;
+          steps[currentStep].classList.add("active");
+        });
+
+      function validarPaso(paso) {
+        const inputs = steps[paso].querySelectorAll("input, select, textarea");
+        let valido = true;
+        inputs.forEach((input) => {
+          if (!input.checkValidity()) {
+            input.classList.add("is-invalid");
+            valido = false;
+          } else {
+            input.classList.remove("is-invalid");
+          }
+        });
+        return valido;
+      }
+    </script>
+  </body>
+</html>
