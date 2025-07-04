@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pasos Bonitos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f2f2f2;
+        padding: 40px;
+      }
+
+      .steps-indicator {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+      .step {
+        text-align: center;
+        flex: 1;
+        position: relative;
+      }
+
+      .step::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: -50%;
+        width: 100%;
+        height: 3px;
+        background-color: #ccc;
+        z-index: 0;
+      }
+
+      .step:first-child::before {
+        display: none;
+      }
+
+      .circle {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        background-color: #ccc;
+        color: white;
+        z-index: 1;
+        position: relative;
+      }
+
+      .label {
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .step.active .circle {
+        background-color: #007bff;
+      }
+
+      .step.completed .circle {
+        background-color: #28a745;
+      }
+
+      .step.active .label,
+      .step.completed .label {
+        color: #000;
+        font-weight: bold;
+      }
+
+      .form-step {
+        display: none;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-step.active {
+        display: block;
+      }
+
+      .buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .next-step {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .next-step:hover {
+        background-color: #0056b3;
+      }
+
+      .prev-step {
+        background-color: #6c757d;
+        color: white;
+      }
+
+      .prev-step:hover {
+        background-color: #5a6268;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Indicador de pasos -->
+    <div class="steps-indicator">
+      <div class="step" data-step="0">
+        <span class="circle"><i class="fas fa-users-cog"></i></span>
+        <span class="label">Trabajadores</span>
+      </div>
+      <div class="step" data-step="1">
+        <span class="circle"><i class="fas fa-building-user"></i></span>
+        <span class="label">Cliente</span>
+      </div>
+      <div class="step" data-step="2">
+        <span class="circle"><i class="fas fa-user-tie"></i></span>
+        <span class="label">Representante</span>
+      </div>
+    </div>
+
+    <!-- Form Steps -->
+    <div class="form-step active">
+      <h2>Paso 1: Trabajadores</h2>
+      <p>Contenido de trabajadores...</p>
+      <div class="buttons">
+        <span></span>
+        <button class="next-step">Siguiente</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <h2>Paso 2: Cliente</h2>
+      <p>Contenido del cliente...</p>
+      <div class="buttons">
+        <button class="prev-step">Anterior</button>
+        <button class="next-step">Siguiente</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <h2>Paso 3: Representante</h2>
+      <p>Contenido del representante...</p>
+      <div class="buttons">
+        <button class="prev-step">Anterior</button>
+        <button class="next-step">Finalizar</button>
+      </div>
+    </div>
+
+    <script>
+      const steps = document.querySelectorAll(".form-step");
+      const indicators = document.querySelectorAll(".steps-indicator .step");
+      let currentStep = 0;
+
+      function actualizarIndicadorPasos() {
+        indicators.forEach((step, index) => {
+          step.classList.remove("active", "completed");
+          if (index < currentStep) {
+            step.classList.add("completed");
+          } else if (index === currentStep) {
+            step.classList.add("active");
+          }
+        });
+      }
+
+      function mostrarPaso(index) {
+        steps.forEach((step, i) => {
+          step.classList.toggle("active", i === index);
+        });
+        actualizarIndicadorPasos();
+      }
+
+      document.querySelectorAll(".next-step").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (currentStep < steps.length - 1) {
+            currentStep++;
+            mostrarPaso(currentStep);
+          } else {
+            alert("Formulario finalizado 🎉");
+          }
+        });
+      });
+
+      document.querySelectorAll(".prev-step").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (currentStep > 0) {
+            currentStep--;
+            mostrarPaso(currentStep);
+          }
+        });
+      });
+
+      actualizarIndicadorPasos();
+    </script>
+  </body>
+</html>
