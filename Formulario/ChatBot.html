@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot EntelBot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+    }
+
+    #chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 90px;
+      height: 120px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    #chatbot-icon:hover {
+      transform: scale(1.05);
+    }
+
+    #chatbot-icon img {
+      width: 100%;
+      height: auto;
+    }
+
+    #chatbox {
+      position: fixed;
+      bottom: 150px;
+      right: 30px;
+      width: 350px;
+      height: 480px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    #chatbox-header {
+      background: linear-gradient(135deg, #003da5, #007bff);
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #chatbox-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+
+    #chatbox-messages p {
+      margin-bottom: 10px;
+    }
+
+    #chatbox-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    #chatbox-input input {
+      flex: 1;
+      border: none;
+      padding: 12px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    #chatbox-input button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    #chatbox-input button:hover {
+      background: #0056b3;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Icono robot con cuerpo + Entel -->
+<div id="chatbot-icon" title="Chatea con EntelBot">
+  <img src="xxx.png" alt="Robot Entel">
+</div>
+
+<!-- Chatbox -->
+<div id="chatbox">
+  <div id="chatbox-header">🤖 EntelBot</div>
+  <div id="chatbox-messages">
+    <p><strong>EntelBot:</strong> ¡Hola! ¿Cómo puedo ayudarte hoy?</p>
+  </div>
+  <div id="chatbox-input">
+    <input type="text" placeholder="Escribe tu mensaje...">
+    <button>Enviar</button>
+  </div>
+</div>
+
+<script>
+  const icon = document.getElementById("chatbot-icon");
+  const box = document.getElementById("chatbox");
+
+  icon.addEventListener("click", () => {
+    box.style.display = box.style.display === "flex" ? "none" : "flex";
+  });
+</script>
+
+</body>
+</html>
