@@ -1,0 +1,216 @@
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 700px;
+    max-height: 400px; /* ✅ limite visual */
+    overflow: hidden;
+  }
+
+  h3 {
+    text-align: center;
+    color: #2f3640;
+    margin-bottom: 20px;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  select {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important; /* ✅ Esto es clave */
+  }
+</style>
+<th:block th:fragment="graficLine">
+  <div class="container">
+    <h3>Registros por Fecha</h3>
+
+    <div class="filters">
+      <select id="anioFiltro">
+        <option value="">-- Año --</option>
+      </select>
+      <select id="mesFiltro">
+        <option value="">-- Mes --</option>
+      </select>
+    </div>
+
+    <canvas id="chart-line"></canvas>
+  </div>
+
+  <script>
+    const mesesNombres = [
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dic",
+    ];
+    const ctx = document.getElementById("chart-line").getContext("2d");
+
+    // ✅ Aquí deberías inyectar tu array de registros desde tu base de datos (Java, Python, etc.)
+    // Debe tener objetos así: { anio: 2025, mes: 7, dia: 1, cantidad: 3 }
+    const registros = [
+      // EJEMPLO de datos reales
+      { anio: 2025, mes: 7, dia: 1, cantidad: 3 },
+      { anio: 2025, mes: 7, dia: 2, cantidad: 6 },
+      { anio: 2025, mes: 7, dia: 3, cantidad: 2 },
+      { anio: 2025, mes: 6, dia: 28, cantidad: 5 },
+      { anio: 2024, mes: 12, dia: 5, cantidad: 8 },
+      // ⚠️ Reemplaza este array con tus datos reales desde el backend
+    ];
+
+    // Obtener años y meses únicos con datos
+    const años = [...new Set(registros.map((r) => r.anio))];
+    const mesesPorAño = {};
+    registros.forEach((r) => {
+      if (!mesesPorAño[r.anio]) mesesPorAño[r.anio] = new Set();
+      mesesPorAño[r.anio].add(r.mes);
+    });
+
+    const anioFiltro = document.getElementById("anioFiltro");
+    const mesFiltro = document.getElementById("mesFiltro");
+
+    // Poblar el selector de años
+    años.forEach((anio) => {
+      const opt = document.createElement("option");
+      opt.value = anio;
+      opt.textContent = anio;
+      anioFiltro.appendChild(opt);
+    });
+
+    let chart;
+
+    // Actualizar el gráfico
+    function actualizarGrafico() {
+      const anioSel = parseInt(anioFiltro.value);
+      const mesSel = parseInt(mesFiltro.value);
+
+      let datosFiltrados = registros.filter((r) => r.anio === anioSel);
+
+      // Si el mes está seleccionado, mostrar por día
+      let labels = [],
+        cantidades = [];
+
+      if (!isNaN(mesSel)) {
+        datosFiltrados = datosFiltrados.filter((r) => r.mes === mesSel);
+
+        // Agrupar por día
+        const agrupado = {};
+        datosFiltrados.forEach((r) => {
+          agrupado[r.dia] = (agrupado[r.dia] || 0) + r.cantidad;
+        });
+
+        labels = Object.keys(agrupado).map((n) => `Día ${n}`);
+        cantidades = Object.values(agrupado);
+      } else {
+        // Agrupar por mes del año
+        const agrupado = {};
+        datosFiltrados.forEach((r) => {
+          agrupado[r.mes] = (agrupado[r.mes] || 0) + r.cantidad;
+        });
+
+        labels = Object.keys(agrupado).map((m) => mesesNombres[m - 1]);
+        cantidades = Object.values(agrupado);
+      }
+
+      // Crear o actualizar gráfico
+      if (chart) {
+        chart.data.labels = labels;
+        chart.data.datasets[0].data = cantidades;
+        chart.update();
+      } else {
+        chart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels,
+            datasets: [
+              {
+                label: "Cantidad de registros",
+                data: cantidades,
+                borderColor: "#0984e3",
+                backgroundColor: "rgba(9, 132, 227, 0.15)",
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                fill: true,
+                tension: 0.3,
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => `Cantidad: ${ctx.parsed.y}`,
+                },
+              },
+              legend: { display: false },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { stepSize: 5, color: "#636e72" },
+                grid: { borderDash: [4, 4], color: "#dfe6e9" },
+              },
+              x: {
+                ticks: { color: "#636e72" },
+                grid: { display: false },
+              },
+            },
+          },
+        });
+      }
+    }
+
+    // Cuando se selecciona año, actualizar meses disponibles
+    anioFiltro.addEventListener("change", () => {
+      mesFiltro.innerHTML = '<option value="">-- Mes --</option>';
+
+      const selAnio = parseInt(anioFiltro.value);
+      if (mesesPorAño[selAnio]) {
+        [...mesesPorAño[selAnio]]
+          .sort((a, b) => a - b)
+          .forEach((m) => {
+            const opt = document.createElement("option");
+            opt.value = m;
+            opt.textContent = mesesNombres[m - 1];
+            mesFiltro.appendChild(opt);
+          });
+      }
+
+      actualizarGrafico();
+    });
+
+    mesFiltro.addEventListener("change", actualizarGrafico);
+
+    // Inicializar por primer año disponible
+    if (años.length > 0) {
+      anioFiltro.value = años[0];
+      anioFiltro.dispatchEvent(new Event("change"));
+    }
+  </script>
+</th:block>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container my-4">
+      <!-- Título y Porcentaje -->
+      <div class="row align-items-center mb-2">
+        <div class="col">
+          <h6 class="mb-0">Avance de Ventas</h6>
+        </div>
+        <div class="col text-end">
+          <span id="porcentaje-ventas">0%</span>
+        </div>
+      </div>
+
+      <!-- Barra con marcador -->
+      <div class="position-relative">
+        <div class="progress" style="height: 20px">
+          <div
+            class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+            id="barra-progreso"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <!-- Marcador de Meta -->
+        <div
+          id="meta-marcador"
+          style="
+            position: absolute;
+            top: -4px;
+            width: 2px;
+            height: 28px;
+            background-color: #dc3545;
+          "
+        ></div>
+      </div>
+
+      <!-- Detalle de ventas -->
+      <div class="text-end mt-1">
+        <small id="texto-detalle">0 / 0 ventas</small>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      // Datos configurables
+      const ventas = 750;
+      const meta = 1000;
+
+      // Cálculo del porcentaje
+      const porcentaje = Math.min((ventas / meta) * 100, 100);
+
+      // Obtener elementos
+      const barra = document.getElementById("barra-progreso");
+      const porcentajeTexto = document.getElementById("porcentaje-ventas");
+      const detalleTexto = document.getElementById("texto-detalle");
+      const marcador = document.getElementById("meta-marcador");
+      const progress = document.querySelector(".progress");
+
+      // Simulación de animación de carga
+      let carga = 0;
+      const intervalo = setInterval(() => {
+        if (carga >= porcentaje) {
+          clearInterval(intervalo);
+        } else {
+          carga += 1;
+          barra.style.width = `${carga}%`;
+          porcentajeTexto.textContent = `${carga}%`;
+        }
+      }, 20); // velocidad de carga
+
+      // Texto inferior
+      detalleTexto.textContent = `${ventas} / ${meta} ventas`;
+
+      // Posicionar marcador de meta cuando la barra esté renderizada
+      window.addEventListener("load", () => {
+        const anchoBarra = progress.offsetWidth;
+        const metaPos = Math.min((meta / meta) * anchoBarra, anchoBarra);
+        marcador.style.left = `${metaPos}px`;
+      });
+    </script>
+  </body>
+</html>
